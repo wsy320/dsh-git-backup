@@ -44,13 +44,21 @@
 - Git
 - Node.js >= 20（仅 CLI/开发需要）
 
-把本仓库安装到目标 DSH profile。先退出 DSH 桌面应用：
+从 npm 安装（推荐）。先退出 DSH 桌面应用：
+
+```bash
+dsh plugin --profile <profile> add dsh-git-backup
+```
+
+`<profile>` 默认是 `desktop`。
+
+从本仓库安装：
 
 ```bash
 dsh plugin --profile <profile> add "link:/path/to/dsh-backup"
 ```
 
-`<profile>` 默认是 `desktop`，`/path/to/dsh-backup` 替换成本仓库所在目录。
+`/path/to/dsh-backup` 替换成本仓库所在目录。
 
 也可以手动确认 profile 的 `package.json` 包含：
 
