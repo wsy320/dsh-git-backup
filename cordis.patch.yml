@@ -1,0 +1,5 @@
+# Bundle patch layer for dsh-git-backup.
+# The row loads the package's main entry as a host Cordis plugin.
+- insert:
+    - id: dsh-git-backup
+      name: dsh-git-backup

@@ -1,0 +1,60 @@
+{
+  "name": "dsh-git-backup",
+  "version": "0.1.4",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "backup",
+    "restore",
+    "git"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wsy320/dsh-git-backup.git"
+  },
+  "homepage": "https://github.com/wsy320/dsh-git-backup#readme",
+  "bugs": {
+    "url": "https://github.com/wsy320/dsh-git-backup/issues"
+  },
+  "author": "wsy320",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-backup": "bin/dsh-backup.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "lib",
+    "cordis.patch.yml",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "backup": "node bin/dsh-backup.js backup",
+    "restore": "node bin/dsh-backup.js restore"
+  }
+}
